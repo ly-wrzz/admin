@@ -72,10 +72,17 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: { title: '首页', icon: 'dashboard', affix: true }
+        meta: {
+          title: '首页',
+          icon: 'dashboard',
+          affix: true
+        }
       }
     ]
-  },
+  }
+]
+
+export const asyncRoutes = [
   {
     path: '/user',
     component: Layout,
@@ -84,8 +91,7 @@ export const constantRoutes = [
     name: 'user',
     meta: {
       title: '用户管理',
-      icon: 'peoples',
-      roles: ['admin', 'editor'] // you can set roles in root nav
+      icon: 'peoples'
     },
     children: [
       {
@@ -93,8 +99,7 @@ export const constantRoutes = [
         component: () => import('@/views/user/index'),
         name: 'UserIndex',
         meta: {
-          title: '用户列表',
-          roles: ['admin'] // or you can only set roles in sub nav
+          title: '用户列表'
         }
       },
       {
@@ -102,14 +107,12 @@ export const constantRoutes = [
         component: () => import('@/views/user/white'),
         name: 'UserWhite',
         meta: {
-          title: '白名单列表',
-          roles: ['admin'] // or you can only set roles in sub nav
+          title: '白名单列表'
         }
       }
     ]
   }
 ]
-
 const createRouter = () => new Router({
   // mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),

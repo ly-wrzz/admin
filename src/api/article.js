@@ -1,5 +1,29 @@
 import request from '@/utils/request'
 
+export function memberList(query) {
+  return request({
+    url: 'http://www.gg.com/admin/member/memberlist',
+    method: 'POST',
+    params: query
+  })
+}
+
+export function changeWhite(data) {
+  return request({
+    url: 'http://www.gg.com/admin/member/changeWhite',
+    method: 'POST',
+    params: data
+  })
+}
+
+export function whiteList(whiteList) {
+  return request({
+    url: 'http://www.gg.com/admin/member/whiteList',
+    method: 'POST',
+    params: whiteList
+  })
+}
+
 export function fetchList(query) {
   return request({
     url: '/article/list',
